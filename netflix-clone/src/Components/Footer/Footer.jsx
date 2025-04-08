@@ -28,22 +28,23 @@ export default function Footer() {
   ];
 
   const listItems = netflixLinks.map((link) => (
-    <Link href="#" color="inherit">
+    <Link href="#" color="inherit" key={link}>
       {link}
     </Link>
   ));
 
   return (
     <>
-      <div
-        className=" bg-black pt-9 "
-        style={{ position: "fixed", bottom: "0", left: "0", width: "100%" }}
-      >
-        <div className="dark:bg-w-800  flex justify-center ">
-          <div className="max-w-xl mx-auto p-6 ">
+      <div className="bg-black pt-9">
+        {" "}
+        {/* Ensure full width */}
+        <div className="dark:bg-w-800 flex justify-center">
+          <div className="px-6">
+            {" "}
+            {/* Ensure no max-w-xl to allow full width */}
             <label
               htmlFor="input-9"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-100 "
+              className="block text-sm font-medium text-gray-700 dark:text-gray-100"
               style={{ fontSize: "1rem" }}
             >
               Ready to watch? Enter your email to create or restart your
@@ -56,7 +57,7 @@ export default function Footer() {
               <input
                 type="email"
                 id="input-9"
-                className="w-full h-10 px-3 text-sm text-gray-700 border border-r-0 rounded-r-none border-blue-500 focus:outline-none rounded shadow-sm"
+                className=" h-10 px-3 text-sm text-gray-700 border border-r-0 rounded-r-none border-blue-500 focus:outline-none rounded shadow-sm"
                 placeholder="Your Email"
                 style={{ fontSize: "1rem" }}
               />
@@ -65,7 +66,7 @@ export default function Footer() {
                 type="submit"
                 id="input-9"
                 value={"Get Started >"}
-                className="w-full h-10 px-3 text-sm text-gray-700 border border-r-0 rounded-r-none border-blue-500 focus:outline-none rounded shadow-sm"
+                className=" h-10 px-3 text-sm text-gray-700 border border-r-0 rounded-r-none border-blue-500 focus:outline-none rounded shadow-sm"
                 style={{
                   backgroundColor: "red",
                   color: "white",
@@ -77,18 +78,22 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
-        <div className="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
-          <div className="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
-            {/* <div className="md:w-[316px]">
-              <p className="text-[18px] font-medium text-white"></p>
-              <h1 className="text-white font-extrabold">
-                <span className="text-rose-600">NETFLIX</span>
-              </h1>
-              <p />
-            </div> */}
-
-            <div style={{ color: "rgb(252, 133, 133)" }}>
+        <div
+          className=" px-4 xl:px-0"
+          style={{ paddingLeft: "20%", paddingRight: "20%" }}
+        >
+          {" "}
+          {/* Removed max-w-xl */}
+          <div className="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10 w-full">
+            {" "}
+            {/* Ensure full width */}
+            <div
+              style={{
+                color: "rgb(252, 133, 133)",
+                paddingLeft: "5%",
+                paddingRight: "5%",
+              }}
+            >
               <Grid
                 container
                 spacing={2}
@@ -105,7 +110,6 @@ export default function Footer() {
               </Grid>
             </div>
           </div>
-
           <hr className="mt-[30px] text-white" />
           <div className="flex items-center justify-center pb-8 pt-[9px] md:py-8">
             <p className="text-[10px] font-normal text-white md:text-[12px]">
